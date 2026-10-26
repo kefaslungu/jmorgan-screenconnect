@@ -10,28 +10,24 @@ Write-Host "=== VirusTotal Upload & Comment ===" -ForegroundColor Cyan
 # --- 1. Upload file for fresh scan ---
 Write-Host "`n[1] Uploading file to VirusTotal..." -ForegroundColor Cyan
 
-$fileBytes = [System.IO.File]::ReadAllBytes($sample)
-$boundary  = [System.Guid]::NewGuid().ToString()
-$LF        = "`r`n"
-
-$bodyLines = (
-    "--$boundary",
-    "Content-Disposition: form-data; name=`"file`"; filename=`"ScreenConnect.ClientSetup.exe`"",
-    "Content-Type: application/octet-stream",
-    "",
-    [System.Text.Encoding]::Latin1.GetString($fileBytes),
-    "--$boundary--"
-)
-$bodyBytes = [System.Text.Encoding]::Latin1.GetBytes($bodyLines -join $LF)
+# Use HttpClient for binary-safe multipart upload
+Add-Type -AssemblyName System.Net.Http
+$httpClient = [System.Net.Http.HttpClient]::new()
+$httpClient.DefaultRequestHeaders.Add("x-apikey", $apiKey)
+$multipart  = [System.Net.Http.MultipartFormDataContent]::new()
+$fileStream = [System.IO.File]::OpenRead($sample)
+$fileContent = [System.Net.Http.StreamContent]::new($fileStream)
+$fileContent.Headers.ContentType = [System.Net.Http.Headers.MediaTypeHeaderValue]::new("application/octet-stream")
+$multipart.Add($fileContent, "file", [System.IO.Path]::GetFileName($sample))
 
 try {
-    $uploadResp = Invoke-RestMethod `
-        -Uri "https://www.virustotal.com/api/v3/files" `
-        -Method POST `
-        -Headers $headers `
-        -ContentType "multipart/form-data; boundary=$boundary" `
-        -Body $bodyBytes `
-        -ErrorAction Stop
+    $response    = $httpClient.PostAsync("https://www.virustotal.com/api/v3/files", $multipart).Result
+    $respJson    = $response.Content.ReadAsStringAsync().Result
+    $uploadResp  = $respJson | ConvertFrom-Json
+    if (-not $response.IsSuccessStatusCode) {
+        throw "HTTP $([int]$response.StatusCode): $respJson"
+    }
+    $analysisId = $uploadResp.data.id
 
     $analysisId = $uploadResp.data.id
     Write-Host "Upload accepted. Analysis ID: $analysisId" -ForegroundColor Green
@@ -62,12 +58,15 @@ try {
         Write-Host "Analysis still pending after $attempts polls. Check VT manually." -ForegroundColor Yellow
     }
 } catch {
-    $code = $_.Exception.Response.StatusCode.value__
-    if ($code -eq 409) {
-        Write-Host "File already exists in VT (409 conflict) - skipping re-upload, proceeding to comment." -ForegroundColor Yellow
+    if ($_ -match "409") {
+        Write-Host "File already exists in VT (409) - skipping re-upload, proceeding to comment." -ForegroundColor Yellow
     } else {
-        Write-Host "[ERROR] Upload failed: HTTP $code - $_" -ForegroundColor Red
+        Write-Host "[ERROR] Upload failed: $_" -ForegroundColor Red
     }
+} finally {
+    $fileStream.Dispose()
+    $multipart.Dispose()
+    $httpClient.Dispose()
 }
 
 # --- 3. Post analysis comment on the file page ---
