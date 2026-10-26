@@ -455,7 +455,96 @@ Before and after the download, the page collects and silently POSTs victim data 
 
 ---
 
-## 15. Extracted Artifacts Location
+## 15. Domain & Infrastructure OSINT
+
+Script: `08_domain_recon.ps1`
+
+### myinnercircle.top — Delivery Server
+
+| Field | Value |
+|-------|-------|
+| **Registrar** | PDR Ltd (PublicDomainRegistry.com) |
+| **Registration date** | **2026-10-25** — 1 day before this analysis |
+| **Expiry date** | 2027-10-25 (1-year burner registration) |
+| **Nameservers** | `mcgrory.ns.cloudflare.com`, `wally.ns.cloudflare.com` |
+| **A records** | `104.21.18.146`, `172.67.182.87` — both Cloudflare AS13335 (anycast proxy) |
+| **Live DNS** | `188.114.96.0`, `188.114.97.0` — Cloudflare anycast (rotates) |
+| **Origin IP** | Hidden behind Cloudflare — not recoverable via DNS |
+| **TLS certificate** | No domain cert in CT logs (crt.sh: none) — uses Cloudflare shared certificate |
+| **VT detections** | 0/37 — not yet flagged on VirusTotal (fresh domain) |
+| **URLScan.io** | No prior scans — not yet indexed by automated scanners |
+| **Registrant** | Fully privacy-protected (PDR privacy service) |
+| **Domain status** | `clientTransferProhibited`, `addPeriod` (newly registered) |
+
+**Key observations:**
+
+- The domain was registered **the day before** the phishing campaign launched. This is a purpose-built burner domain, not a compromised legitimate site.
+- The `.top` TLD is heavily used for disposable phishing infrastructure due to low registration cost.
+- Cloudflare was configured on the same day as registration — the attacker stood this up quickly and deliberately.
+- The **Cloudflare Turnstile bot-challenge** (Screenshot 145) is consistent with the two Cloudflare beacon tokens found embedded in the HTML lure (`f0562538138149b7b3b0ea3554e45d1e`, `c0445a1877504b0f98045742074abc31`). The challenge filters automated scanners and sandboxes before the lure page is served, reducing detection.
+- With Cloudflare as a proxy, the true hosting provider and server location cannot be determined from passive DNS alone.
+
+### annemadecards.screenconnect.com — Installer Download Server
+
+| Field | Value |
+|-------|-------|
+| **Type** | Subdomain of ConnectWise-managed `screenconnect.com` |
+| **Role** | Hosts and serves `ScreenConnect.ClientSetup.exe` |
+| **Download URL** | `https://annemadecards.screenconnect.com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest` |
+| **URL parameters** | `e=Access` (persistent session), `y=Guest` (victim role) — match the `system.config` C2 parameters |
+| **CNAME** | `server-ovh60020014-web.screenconnect.com` |
+| **Resolved IP** | `148.113.190.172` — OVH Canada (AS16276) |
+| **VT status** | Not in VT database |
+| **Ownership** | Attacker-controlled subdomain provisioned through their ConnectWise account |
+
+This is legitimate ConnectWise infrastructure being abused. The `annemadecards` subdomain is the name the attacker chose for their ConnectWise account — ConnectWise provisioned it automatically. The URL parameters encode the session type directly in the download link, meaning the installer is pre-configured at download time.
+
+The CNAME reveals ConnectWise hosts this on OVH (a French hosting company), server `ovh60020014`, located in their Canadian datacenter.
+
+### instance-b6ny1e-relay.screenconnect.com — C2 Relay
+
+| Field | Value |
+|-------|-------|
+| **Type** | Subdomain of ConnectWise-managed `screenconnect.com` |
+| **Role** | Persistent C2 relay — handles all attacker-victim traffic after installation |
+| **Port** | 443 / TLS (indistinguishable from HTTPS traffic) |
+| **CNAME** | `server-ovh60020014-relay.screenconnect.com` |
+| **Resolved IP** | `51.79.7.81` — OVH Canada (AS16276) |
+| **Instance ID** | `b6ny1e` (subdomain prefix) |
+| **Instance fingerprint** | `67c6a273dd7a01db` (from `system.config`) |
+| **VT detections** | 0/39 — clean (legitimate infrastructure) |
+| **Ownership** | ConnectWise cloud relay — ConnectWise can shut it down at abuse@connectwise.com |
+
+**How the attacker uses ConnectWise's domain:** ScreenConnect is a SaaS product. When anyone creates a ConnectWise cloud account, ConnectWise automatically provisions both subdomains for that account. The attacker registered an account (likely a trial, or with a stolen payment method) and received these subdomains as part of the service. ConnectWise owns and operates the servers; the attacker owns the account and its configuration. Reporting instance `67c6a273dd7a01db` to ConnectWise abuse deletes the account and immediately kills the C2 channel for any installed victims — no victim action required.
+
+Both CNAME chains route to the **same OVH server** (`ovh60020014`): the relay IP `51.79.7.81` and download IP `148.113.190.172` are co-located on ConnectWise's OVH-hosted infrastructure in Canada.
+
+### Infrastructure Summary
+
+```
+Victim browser
+      │
+      ▼
+  rebrand.ly/p1vyczk  (URL shortener — masks destination)
+      │
+      ▼
+  myinnercircle.top  (Cloudflare Turnstile → lure page)
+  Registered: 2026-10-25  ← 1 day old
+  DNS: Cloudflare AS13335  ← origin hidden
+      │
+      ├── Telemetry: report.php → Telegram bot (attacker gets victim IP + OS)
+      │
+      ▼
+  annemadecards.screenconnect.com  (ConnectWise CDN)
+      └── ScreenConnect.ClientSetup.exe  (auto-downloaded)
+                │
+                ▼ (if executed)
+  instance-b6ny1e-relay.screenconnect.com:443  (persistent C2)
+```
+
+---
+
+## 16. Extracted Artifacts Location
 
 ```
 [SAMPLE_PATH]\
@@ -467,6 +556,7 @@ Before and after the download, the page collects and silently POSTs victim data 
 ├── 05_virustotal_check.ps1                    <- VirusTotal API hash lookup
 ├── 06_ghidra_analysis.py                      <- PyGhidra 3 decompilation script
 ├── 07_vt_upload.ps1                           <- VirusTotal upload & comment script
+├── 08_domain_recon.ps1                        <- Domain/infrastructure OSINT (VT + DNS)
 ├── find_pyghidra.ps1                          <- Helper to locate PyGhidra wheel
 ├── ghidra_output.txt                          <- Full Ghidra decompilation output
 ├── readme.md                                  <- This report
