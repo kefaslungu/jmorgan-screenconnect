@@ -1,0 +1,1077 @@
+====================================================================
+GHIDRA ANALYSIS  --  jmorgan (ScreenConnect.ClientSetup.exe)
+====================================================================
+
+[PROGRAM INFO]
+  Name       : ScreenConnect.ClientSetup.exe
+  Language   : x86:LE:32:default
+  Format     : Portable Executable (PE)
+  Image base : 0x00400000
+  Compiler   : visualstudio:unknown
+
+[ENTRY POINTS]
+  0x004014AD  entry
+
+[FUNCTIONS  --  404 total]
+  0x00401000  FUN_00401000                                   sz=8
+  0x00401010  FUN_00401010                                   sz=302
+  0x00401140  FUN_00401140                                   sz=286
+  0x0040125E  __security_check_cookie                        sz=14
+  0x00401331  __scrt_common_main_seh                         sz=318
+  0x004014AD  entry                                          sz=10
+  0x004014B7  FUN_004014b7                                   sz=40
+  0x004014DF  FUN_004014df                                   sz=250
+  0x004015D9  find_pe_section                                sz=68
+  0x0040161D  ___scrt_acquire_startup_lock                   sz=50
+  0x0040164F  ___scrt_initialize_crt                         sz=57
+  0x00401688  ___scrt_initialize_onexit_tables               sz=134
+  0x0040170F  ___scrt_is_nonwritable_in_current_image        sz=126
+  0x004017A3  ___scrt_release_startup_lock                   sz=29
+  0x004017C0  ___scrt_uninitialize_crt                       sz=40
+  0x004017E8  __onexit                                       sz=45
+  0x00401815  _atexit                                        sz=21
+  0x0040182A  ___get_entropy                                 sz=77
+  0x00401877  ___security_init_cookie                        sz=75
+  0x004018C2  FUN_004018c2                                   sz=3
+  0x004018C5  FUN_004018c5                                   sz=4
+  0x004018C9  FUN_004018c9                                   sz=6
+  0x004018CF  FUN_004018cf                                   sz=12
+  0x004018DB  FUN_004018db                                   sz=3
+  0x004018DE  FUN_004018de                                   sz=32
+  0x004018FF  guard_check_icall                              sz=3
+  0x00401902  FUN_00401902                                   sz=6
+  0x00401908  FUN_00401908                                   sz=6
+  0x0040190E  FUN_0040190e                                   sz=29
+  0x0040192B  FUN_0040192b                                   sz=12
+  0x00401937  FUN_00401937                                   sz=6
+  0x0040193D  FUN_0040193d                                   sz=6
+  0x00401943  FUN_00401943                                   sz=283
+  0x00401A5E  ___scrt_get_show_window_mode                   sz=49
+  0x00401A8F  thunk_FUN_004018c2                             sz=5 [THUNK]
+  0x00401A94  FUN_00401a94                                   sz=66
+  0x00401AE2  FUN_00401ae2                                   sz=85
+  0x00401B38  FUN_00401b38                                   sz=8
+  0x00401B40  FUN_00401b40                                   sz=44
+  0x00401B6C  FUN_00401b6c                                   sz=44
+  0x00401BA0  __SEH_prolog4                                  sz=69
+  0x00401BF0  __SEH_epilog4                                  sz=20
+  0x00401C04  FUN_00401c04                                   sz=468
+  0x00401DD8  ___scrt_is_ucrt_dll_in_use                     sz=12
+  0x00401DE4  FUN_00401de4                                   sz=111
+  0x00401E54  FUN_00401e54                                   sz=93
+  0x00401EB1  FUN_00401eb1                                   sz=246
+  0x00401FA7  _JumpToContinuation                            sz=43
+  0x00401FDA  _UnwindNestedFrames                            sz=83
+  0x0040202D  __CatchGuardHandler                            sz=49
+  0x0040205E  __CreateFrameInfo                              sz=36
+  0x00402082  FUN_00402082                                   sz=71
+  0x004020CA  __TranslatorGuardHandler                       sz=152
+  0x00402167  FID_conflict:___CxxFrameHandler3               sz=54
+  0x004021A0  _ValidateLocalCookies                          sz=50
+  0x004021E0  __except_handler4                              sz=350
+  0x0040233E  ___vcrt_initialize                             sz=31
+  0x0040235D  ___vcrt_uninitialize                           sz=23
+  0x00402374  ___std_type_info_compare                       sz=60
+  0x004023B0  ___DestructExceptionObject                     sz=142
+  0x00402451  _CallMemberFunction0                           sz=13
+  0x0040245E  FUN_0040245e                                   sz=87
+  0x004024B6  __IsExceptionObjectToBeDestroyed               sz=38
+  0x004024DC  ___AdjustPointer                               sz=37
+  0x00402501  FUN_00402501                                   sz=85
+  0x00402557  FUN_00402557                                   sz=9
+  0x00402560  FUN_00402560                                   sz=9
+  0x00402570  _memset                                        sz=346
+  0x004026CA  FUN_004026ca                                   sz=28
+  0x004026E6  ___vcrt_getptd                                 sz=14
+  0x004026F4  ___vcrt_getptd_noexit                          sz=146
+  0x00402786  ___vcrt_initialize_ptd                         sz=51
+  0x004027B9  ___vcrt_uninitialize_ptd                       sz=27
+  0x004027D4  FUN_004027d4                                   sz=308
+  0x00402912  BuildCatchObjectInternal<class___FrameHandler3>  sz=140
+  0x004029AB  CatchIt<class___FrameHandler3>                 sz=128
+  0x00402A2B  FUN_00402a2b                                   sz=932
+  0x00402DD0  FUN_00402dd0                                   sz=309
+  0x00402F06  FID_conflict:___TypeMatch                      sz=142
+  0x00402F94  __InternalCxxFrameHandler<class___FrameHandler3>  sz=258
+  0x00403096  FUN_00403096                                   sz=27
+  0x004030B1  FUN_004030b1                                   sz=24
+  0x004030C9  exception                                      sz=44
+  0x00403106  operator==                                     sz=31
+  0x00403125  FUN_00403125                                   sz=45
+  0x00403152  FUN_00403152                                   sz=177
+  0x004032A5  FUN_004032a5                                   sz=124
+  0x00403321  FUN_00403321                                   sz=32
+  0x00403341  Catch_All@00403341                             sz=25
+  0x00403360  ExFilterRethrow                                sz=74
+  0x004033AA  FrameUnwindToEmptyState                        sz=24
+  0x004033C2  FUN_004033c2                                   sz=195
+  0x00403490  FUN_00403490                                   sz=20
+  0x004034AA  FUN_004034aa                                   sz=153
+  0x00403544  _CallMemberFunction1                           sz=16
+  0x00403554  _CallMemberFunction2                           sz=19
+  0x00403567  FUN_00403567                                   sz=11
+  0x00403572  FUN_00403572                                   sz=13
+  0x00403580  __CallSettingFrame@12                          sz=76
+  0x004035CC  ___except_validate_context_record              sz=48
+  0x00403600  FUN_00403600                                   sz=159
+  0x004036F0  _EH4_CallFilterFunc                            sz=23
+  0x00403710  _EH4_TransferToHandler                         sz=25
+  0x00403730  _EH4_GlobalUnwind2                             sz=26
+  0x00403750  _EH4_LocalUnwind                               sz=23
+  0x00403767  ___vcrt_initialize_locks                       sz=60
+  0x004037A3  ___vcrt_uninitialize_locks                     sz=47
+  0x004037D2  FUN_004037d2                                   sz=160
+  0x00403872  try_load_library_from_system_directory         sz=75
+  0x004038BD  ___vcrt_FlsAlloc                               sz=59
+  0x004038F8  ___vcrt_FlsFree                                sz=59
+  0x00403933  ___vcrt_FlsGetValue                            sz=59
+  0x0040396E  ___vcrt_FlsSetValue                            sz=62
+  0x004039AC  ___vcrt_InitializeCriticalSectionEx            sz=71
+  0x004039F3  FUN_004039f3                                   sz=28
+  0x00403A10  GetCurrentState                                sz=29
+  0x00403A2D  SetState                                       sz=14
+  0x00403A3B  ___std_exception_copy                          sz=99
+  0x00403A9E  ___std_exception_destroy                       sz=31
+  0x00403ABD  __CxxThrowException@8                          sz=108
+  0x00403B30  FUN_00403b30                                   sz=1330
+  0x004040B0  FUN_004040b0                                   sz=12
+  0x004040C0  __NLG_Notify                                   sz=31
+  0x004040E0  FUN_004040e0                                   sz=3
+  0x004040F0  __seh_filter_exe                               sz=371
+  0x00404263  FUN_00404263                                   sz=6
+  0x00404269  FUN_00404269                                   sz=15
+  0x00404278  __crt_fast_encode_pointer<>                    sz=31
+  0x00404297  initialize                                     sz=49
+  0x004042C8  ___acrt_has_user_matherr                       sz=25
+  0x004042E1  FUN_004042e1                                   sz=20
+  0x004042F5  ___acrt_invoke_user_matherr                    sz=73
+  0x0040433E  ___setusermatherr                              sz=21
+  0x00404353  common_configure_argv<char>                    sz=292
+  0x00404477  parse_command_line<char>                       sz=373
+  0x004045EC  ___acrt_allocate_buffer_for_argv               sz=85
+  0x00404641  FUN_00404641                                   sz=11
+  0x0040464C  FUN_0040464c                                   sz=89
+  0x004046A5  FUN_004046a5                                   sz=208
+  0x00404776  free_environment<>                             sz=47
+  0x004047A5  uninitialize<>                                 sz=64
+  0x004047E5  uninitialize_environment_internal<>            sz=27
+  0x00404800  uninitialize_environment_internal<>            sz=27
+  0x0040481B  FUN_0040481b                                   sz=55
+  0x00404852  thunk_FUN_0040464c                             sz=5 [THUNK]
+  0x00404857  __get_narrow_winmain_command_line              sz=83
+  0x004048AA  __initterm                                     sz=92
+  0x00404906  __initterm_e                                   sz=69
+  0x0040494B  atexit_exception_filter                        sz=19
+  0x0040495E  common_exit                                    sz=261
+  0x00404A68  FUN_00404a68                                   sz=9
+  0x00404A77  exit_or_terminate_process                      sz=64
+  0x00404AB8  is_managed_app                                 sz=68
+  0x00404AFC  try_cor_exit_process                           sz=106
+  0x00404B66  FUN_00404b66                                   sz=15
+  0x00404B84  __cexit                                        sz=15
+  0x00404B93  __exit                                         sz=22
+  0x00404BA9  __register_thread_local_exe_atexit_callback    sz=56
+  0x00404BE1  _exit                                          sz=22
+  0x00404BF7  __set_fmode                                    sz=61
+  0x00404C34  ___acrt_set_locale_changed                     sz=11
+  0x00404C91  __configthreadlocale                           sz=98
+  0x00404CF3  FUN_00404cf3                                   sz=6
+  0x00404CF9  __set_new_mode                                 sz=47
+  0x00404D28  FUN_00404d28                                   sz=6
+  0x00404D2E  operator()<class_<lambda_800076c951b434888f4765a74a194fcc>,class_<lambda_4e60a939b0d047cfe11ddc22648dfba9>&,class_<lambda_6dbb1268764f43b569ce7b67e331d33a>_>  sz=66
+  0x00404D73  FUN_00404d73                                   sz=12
+  0x00404D7F  operator()<class_<lambda_995298e7d72eb4c2aab26c0585b3abe5>,class_<lambda_275893d493268fdec8709772e3fcec0e>&,class_<lambda_293819299cbf9a7022e18b56a874bb5c>_>  sz=66
+  0x00404DC4  FUN_00404dc4                                   sz=12
+  0x00404DD0  __acrt_lock_and_call<class_<lambda_275893d493268fdec8709772e3fcec0e>_>  sz=40
+  0x00404DF8  __acrt_lock_and_call<class_<lambda_4e60a939b0d047cfe11ddc22648dfba9>_>  sz=40
+  0x00404E20  operator()                                     sz=288
+  0x00404F40  operator()                                     sz=321
+  0x00405081  FUN_00405081                                   sz=22
+  0x00405097  __execute_onexit_table                         sz=29
+  0x004050B4  __initialize_onexit_table                      sz=61
+  0x004050F1  __register_onexit_function                     sz=36
+  0x00405206  ___acrt_initialize                             sz=18
+  0x00405218  ___acrt_uninitialize                           sz=18
+  0x0040522A  __controlfp_s                                  sz=95
+  0x00405289  FUN_00405289                                   sz=52
+  0x004052C5  _abort                                         sz=67
+  0x00405308  FID_conflict:_free                             sz=5 [THUNK]
+  0x0040530D  FUN_0040530d                                   sz=11
+  0x00405318  _strcpy_s                                      sz=90
+  0x00405372  FUN_00405372                                   sz=11
+  0x0040537D  _LocaleUpdate                                  sz=131
+  0x00405478  _wcsncmp                                       sz=58
+  0x004054B2  operator()<>                                   sz=68
+  0x004054F6  FUN_004054f6                                   sz=12
+  0x00405502  operator()<>                                   sz=85
+  0x00405557  FUN_00405557                                   sz=12
+  0x00405563  operator()<>                                   sz=63
+  0x004055A2  FUN_004055a2                                   sz=12
+  0x004055AE  operator()<>                                   sz=60
+  0x004055EA  FUN_004055ea                                   sz=12
+  0x004055F6  __acrt_lock_and_call<class_<lambda_6250bd4b2a391816dd638c3bf72b0bcb>_>  sz=40
+  0x0040561E  __acrt_lock_and_call<class_<lambda_b2ea41f6bbb362cd97d94c6828d90b61>_>  sz=40
+  0x00405646  __acrt_lock_and_call<class_<lambda_be2b3da3f62db62e9dad5dc70221a656>_>  sz=40
+  0x0040566E  __acrt_lock_and_call<class_<lambda_e69574bed617af4e071282c136b37893>_>  sz=40
+  0x00405696  construct_ptd                                  sz=121
+  0x0040570F  destroy_fls                                    sz=33
+  0x00405730  destroy_ptd                                    sz=169
+  0x004057D9  replace_current_thread_locale_nolock           sz=75
+  0x00405824  FUN_00405824                                   sz=131
+  0x004058A8  ___acrt_getptd_noexit                          sz=133
+  0x00405959  FUN_00405959                                   sz=26
+  0x00405973  ___acrt_call_reportfault                       sz=315
+  0x00405AAE  FUN_00405aae                                   sz=20
+  0x00405AC2  FUN_00405ac2                                   sz=122
+  0x00405B3D  FUN_00405b3d                                   sz=16
+  0x00405B4D  __invoke_watson                                sz=51
+  0x00405B80  FID_conflict:___acrt_errno_from_os_error       sz=67
+  0x00405BC3  ___acrt_errno_map_os_error                     sz=35
+  0x00405BE6  ___doserrno                                    sz=19
+  0x00405BF9  __errno                                        sz=19
+  0x00405C0C  __calloc_base                                  sz=93
+  0x00405C69  FID_conflict:_free                             sz=58
+  0x00405CA3  FUN_00405ca3                                   sz=24
+  0x00405CBB  FUN_00405cbb                                   sz=399
+  0x00405E4B  FUN_00405e4b                                   sz=149
+  0x00405EE1  expand_argument_wildcards<>                    sz=388
+  0x00406065  ~argument_list<>                               sz=37
+  0x0040608A  append                                         sz=53
+  0x004060BF  expand_if_necessary                            sz=135
+  0x00406146  FUN_00406146                                   sz=11
+  0x00406151  operator()<class_<lambda_978dc153c237d78434369da87b74ff60>,class_<lambda_ad1ced32f4ac17aa236e5ef05d6b3b7c>&,class_<lambda_4a8533e2866a575feecb8298ce776b0d>_>  sz=55
+  0x00406188  FUN_00406188                                   sz=12
+  0x00406194  __acrt_lock_and_call<class_<lambda_ad1ced32f4ac17aa236e5ef05d6b3b7c>_>  sz=40
+  0x004061BC  operator()                                     sz=196
+  0x00406280  CPtoLocaleName                                 sz=62
+  0x004062BE  getSystemCP                                    sz=115
+  0x00406331  setSBCS                                        sz=101
+  0x00406396  setSBUpLow                                     sz=404
+  0x0040652A  setmbcp_internal                               sz=257
+  0x0040662B  ___acrt_initialize_multibyte                   sz=30
+  0x00406649  ___acrt_update_thread_multibyte_data           sz=150
+  0x004066DA  FUN_004066da                                   sz=9
+  0x004066EB  __setmbcp_nolock                               sz=497
+  0x004068DC  _memcpy_s                                      sz=129
+  0x0040695D  x_ismbbtype_l                                  sz=89
+  0x004069B6  __ismbblead                                    sz=24
+  0x004069E7  find_end_of_double_null_terminated_sequence    sz=55
+  0x00406A1E  ___dcrt_get_narrow_environment_from_os         sz=131
+  0x00406AE2  ___acrt_lock                                   sz=23
+  0x00406AF9  FUN_00406af9                                   sz=49
+  0x00406B2A  ___acrt_unlock                                 sz=23
+  0x00406B41  try_get_function                               sz=156
+  0x00406BDD  try_get_module                                 sz=123
+  0x00406C58  ___acrt_FlsAlloc@4                             sz=86
+  0x00406CAE  ___acrt_FlsFree@4                              sz=86
+  0x00406D04  ___acrt_FlsGetValue@4                          sz=86
+  0x00406D5A  ___acrt_FlsSetValue@8                          sz=89
+  0x00406DB3  ___acrt_InitializeCriticalSectionEx@12         sz=98
+  0x00406E15  ___acrt_LCMapStringEx@36                       sz=136
+  0x00406E9D  ___acrt_LocaleNameToLCID@8                     sz=92
+  0x00406F1F  ___acrt_is_packaged_app                        sz=135
+  0x00406FA6  ___acrt_uninitialize_winapi_thunks             sz=54
+  0x00406FDC  ___acrt_lowio_create_handle_array              sz=122
+  0x00407056  ___acrt_lowio_destroy_handle_array             sz=53
+  0x0040708B  ___acrt_lowio_ensure_fh_exists                 sz=140
+  0x0040711A  FUN_0040711a                                   sz=9
+  0x00407123  ___acrt_lowio_lock_fh                          sz=35
+  0x00407146  ___acrt_lowio_unlock_fh                        sz=35
+  0x00407169  __free_osfhnd                                  sz=145
+  0x004071FA  __get_osfhandle                                sz=106
+  0x00407264  initialize_inherited_file_handles_nolock       sz=182
+  0x0040731A  FUN_0040731a                                   sz=182
+  0x0040741D  FUN_0040741d                                   sz=9
+  0x00407452  ___pctype_func                                 sz=38
+  0x00407478  ___acrt_locale_free_monetary                   sz=254
+  0x00407576  ___acrt_locale_free_numeric                    sz=105
+  0x004075DF  free_crt_array_internal                        sz=60
+  0x0040761B  ___acrt_locale_free_time                       sz=228
+  0x004076FF  __malloc_base                                  sz=78
+  0x0040774D  ___acrt_GetStringTypeA                         sz=285
+  0x0040786A  __freea_crt                                    sz=32
+  0x0040788A  ___acrt_add_locale_ref                         sz=125
+  0x00407907  ___acrt_free_locale                            sz=330
+  0x00407A51  ___acrt_locale_add_lc_time_reference           sz=41
+  0x00407A7A  ___acrt_locale_free_lc_time_if_unreferenced    sz=48
+  0x00407AAA  ___acrt_locale_release_lc_time_reference       sz=41
+  0x00407AD3  ___acrt_release_locale_ref                     sz=129
+  0x00407B54  FUN_00407b54                                   sz=107
+  0x00407BBA  FUN_00407bba                                   sz=9
+  0x00407BCB  __updatetlocinfoEx_nolock                      sz=80
+  0x00407C1B  FUN_00407c1b                                   sz=11
+  0x00407C26  __recalloc_base                                sz=109
+  0x00407CAE  ___acrt_execute_initializers                   sz=131
+  0x00407D31  ___acrt_execute_uninitializers                 sz=77
+  0x00407D7E  FUN_00407d7e                                   sz=20
+  0x00407D92  __callnewh                                     sz=68
+  0x00407DD6  __query_new_handler                            sz=70
+  0x00407E1F  FUN_00407e1f                                   sz=9
+  0x00407E28  operator()<>                                   sz=75
+  0x00407E76  FUN_00407e76                                   sz=12
+  0x00407E82  __acrt_lock_and_call<class_<lambda_ec61778202f4f5fc7e7711acc23c3bca>_>  sz=40
+  0x00407EAA  get_global_action_nolock                       sz=66
+  0x00407EEC  siglookup                                      sz=40
+  0x00407F14  ___acrt_get_sigabrt_handler                    sz=23
+  0x00407F2B  ___acrt_initialize_signal_handlers             sz=59
+  0x00407F66  FUN_00407f66                                   sz=9
+  0x00407F6F  _raise                                         sz=490
+  0x0040812F  FUN_0040812f                                   sz=15
+  0x00408177  ___hw_cw_sse2                                  sz=171
+  0x00408222  __control87                                    sz=770
+  0x00408524  __hw_cw                                        sz=153
+  0x004085BD  __mbtowc_l                                     sz=250
+  0x004086B7  _mbtowc                                        sz=26
+  0x004086D1  ___acrt_update_locale_info                     sz=45
+  0x004086FE  ___acrt_update_multibyte_info                  sz=45
+  0x0040872B  __fileno                                       sz=38
+  0x00408865  __lock_file                                    sz=20
+  0x00408879  FUN_00408879                                   sz=20
+  0x00408890  shortsort                                      sz=147
+  0x00408930  swap                                           sz=57
+  0x00408970  _qsort                                         sz=916
+  0x00408D0A  common_tcsncpy_s<char>                         sz=177
+  0x00408DBB  FUN_00408dbb                                   sz=11
+  0x00408DD0  _strpbrk                                       sz=64
+  0x00408E10  __mbsdec                                       sz=23
+  0x00408E27  __mbsdec_l                                     sz=141
+  0x00408EB4  __acrt_LCMapStringA_stat                       sz=541
+  0x004090D1  ___acrt_LCMapStringA                           sz=75
+  0x0040912B  GetTableIndexFromLocaleName                    sz=188
+  0x004091E7  ___acrt_DownlevelLocaleNameToLCID              sz=44
+  0x00409213  FID_conflict:__msize_base                      sz=51
+  0x00409246  __realloc_base                                 sz=105
+  0x004092AF  __isatty                                       sz=86
+  0x00409305  ___acrt_stdio_flush_nolock                     sz=102
+  0x0040936B  __fflush_nolock                                sz=71
+  0x004093BB  common_flush_all                               sz=188
+  0x00409460  FUN_00409460                                   sz=10
+  0x0040948A  FUN_0040948a                                   sz=9
+  0x00409493  ___set_fpsr_sse2                               sz=72
+  0x00409509  __clrfp                                        sz=19
+  0x0040951C  __ctrlfp                                       sz=44
+  0x00409548  FUN_00409548                                   sz=91
+  0x004095A3  __statfp                                       sz=18
+  0x004095B5  __isleadbyte_l                                 sz=57
+  0x0040968E  ___acrt_stdio_free_buffer_nolock               sz=62
+  0x004096CC  ___strncnt                                     sz=28
+  0x004096E8  operator()<class_<lambda_61cee617f5178ae960314fd4d05640a0>,class_<lambda_6978c1fb23f02e42e1d9e99668cc68aa>&,class_<lambda_9cd88cf8ad10232537feb2133f08c833>_>  sz=137
+  0x00409774  FUN_00409774                                   sz=12
+  0x00409780  __acrt_lowio_lock_fh_and_call<class_<lambda_6978c1fb23f02e42e1d9e99668cc68aa>_>  sz=40
+  0x004097A8  __commit                                       sz=111
+  0x00409817  write_double_translated_ansi_nolock            sz=435
+  0x004099CA  write_double_translated_unicode_nolock         sz=109
+  0x00409A37  write_requires_double_translation_nolock       sz=118
+  0x00409AAD  write_text_ansi_nolock                         sz=223
+  0x00409B8C  write_text_utf16le_nolock                      sz=238
+  0x00409C7A  write_text_utf8_nolock                         sz=301
+  0x00409DA7  __write                                        sz=221
+  0x00409E69  FUN_00409e69                                   sz=8
+  0x00409E92  __write_nolock                                 sz=524
+  0x0040A30D  common_lseek_nolock<__int64>                   sz=126
+  0x0040A38B  __lseeki64_nolock                              sz=27
+  0x0040A3A6  __fclose_nolock                                sz=118
+  0x0040A4A0  ___ascii_strnicmp                              sz=97
+  0x0040A501  __putwch_nolock                                sz=69
+  0x0040A560  FUN_0040a560                                   sz=24
+  0x0040A57E  FUN_0040a57e                                   sz=614
+  0x0040AD80  FUN_0040ad80                                   sz=23
+  0x0040AD97  __startOneArgErrorHandling                     sz=60
+  0x0040ADD3  ___libm_error_support                          sz=536
+  0x0040AFEB  FUN_0040afeb                                   sz=185
+  0x0040B0A4  operator()<class_<lambda_123407a5e2ac06da108355a851863b7a>,class_<lambda_2fe9b910cf3cbf4a0ab98a02ba45b3ec>&,class_<lambda_ae55bdf541ad94d75914d381c370e64d>_>  sz=115
+  0x0040B11A  FUN_0040b11a                                   sz=12
+  0x0040B126  __acrt_lowio_lock_fh_and_call<class_<lambda_2fe9b910cf3cbf4a0ab98a02ba45b3ec>_>  sz=40
+  0x0040B14E  __close                                        sz=127
+  0x0040B1CD  __close_nolock                                 sz=156
+  0x0040B269  __acrt_stdio_free_stream                       sz=59
+  0x0040B2A4  ___dcrt_lowio_initialize_console_output        sz=31
+  0x0040B2DA  FUN_0040b2da                                   sz=106
+  0x0040B344  FUN_0040b344                                   sz=299
+  0x0040B46F  __87except                                     sz=267
+  0x0040B57A  FUN_0040b57a                                   sz=22
+  0x0040B590  __errcode                                      sz=52
+  0x0040B5C4  __except1                                      sz=206
+  0x0040B692  __handle_exc                                   sz=480
+  0x0040B872  __raise_exc                                    sz=35
+  0x0040B895  __raise_exc_ex                                 sz=753
+  0x0040BB86  __set_errno_from_matherr                       sz=47
+  0x0040BBB5  __umatherr                                     sz=162
+  0x0040BC57  FUN_0040bc57                                   sz=212
+  0x0040BD2B  __set_exp                                      sz=47
+  0x0040BD5A  __sptype                                       sz=94
+  0x0040BDB8  __fpclass                                      sz=164
+  0x0040BE5C  IsProcessorFeaturePresent                      sz=6 [THUNK]
+  0x0040BE70  __FindPESection                                sz=67
+  0x0040BEC0  __IsNonwritableInCurrentImage                  sz=164
+  0x0040BF80  FUN_0040bf80                                   sz=49
+  0x0040BFB1  FUN_0040bfb1                                   sz=35
+  0x0040BFD4  FUN_0040bfd4                                   sz=14
+  0x0040BFE2  __EH_prolog3_catch                             sz=54
+  0x0040C020  __SEH_prolog4_GS                               sz=72
+  0x0040C070  FUN_0040c070                                   sz=15
+  0x0040C080  __alloca_probe_16                              sz=22
+  0x0040C096  __alloca_probe_8                               sz=22
+  0x0040C0B0  __alloca_probe                                 sz=43
+  0x0040C0DB  FID_conflict:_free                             sz=5 [THUNK]
+  0x0040C0E0  __filter_x86_sse2_floating_point_exception_default  sz=120
+  0x0040C160  Unwind@0040c160                                sz=8
+  0x0040C168  Unwind@0040c168                                sz=8
+
+[SUSPICIOUS API CROSS-REFERENCES]
+
+  FindResourceW  @  0x00000008
+    <- 0x0040D018  in  <no function>
+    <- 0x00401059  in  FUN_00401010
+
+  LoadResource  @  0x00000007
+    <- 0x0040D014  in  <no function>
+    <- 0x00401063  in  FUN_00401010
+
+  LockResource  @  0x00000005
+    <- 0x0040D00C  in  <no function>
+    <- 0x0040106A  in  FUN_00401010
+
+  SizeofResource  @  0x00000004
+    <- 0x0040D008  in  <no function>
+    <- 0x00401075  in  FUN_00401010
+
+  CorBindToRuntimeEx  @  0x00000001
+    <- 0x0040D134  in  <no function>
+    <- 0x004011FD  in  FUN_00401140
+
+  LoadLibraryW  @  0x00000006
+    <- 0x0040D010  in  <no function>
+    <- 0x00401155  in  FUN_00401140
+    <- 0x00401173  in  FUN_00401140
+
+  LoadLibraryExW  @  0x0000002B
+    <- 0x0040D0A4  in  <no function>
+    <- 0x0040387F  in  try_load_library_from_system_directory
+    <- 0x004038B1  in  try_load_library_from_system_directory
+    <- 0x00406C0F  in  try_get_module
+    <- 0x00406C29  in  try_get_module
+
+  GetProcAddress  @  0x00000009
+    <- 0x0040D01C  in  <no function>
+    <- 0x0040115D  in  FUN_00401140
+    <- 0x0040117B  in  FUN_00401140
+    <- 0x00404B2F  in  try_cor_exit_process
+    <- 0x00406BA1  in  try_get_function
+    <- 0x0040385F  in  FUN_004037d2
+
+  IsDebuggerPresent  @  0x0000001B
+    <- 0x0040D064  in  <no function>
+    <- 0x00401A1B  in  FUN_00401943
+    <- 0x00405A6B  in  ___acrt_call_reportfault
+
+  WriteFile  @  0x0000002E
+    <- 0x0040D0B0  in  <no function>
+    <- 0x00409D5B  in  write_text_utf8_nolock
+    <- 0x00409934  in  write_double_translated_ansi_nolock
+    <- 0x0040996D  in  write_double_translated_ansi_nolock
+    <- 0x0040A004  in  __write_nolock
+    <- 0x00409B48  in  write_text_ansi_nolock
+    <- 0x00409C36  in  write_text_utf16le_nolock
+
+  CreateFileW  @  0x0000002F
+    <- 0x0040D0B4  in  <no function>
+    <- 0x0040B2B7  in  ___dcrt_lowio_initialize_console_output
+
+[DECOMPILED FUNCTIONS]
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  FUN_00401000  @  0x00401000
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+void __fastcall FUN_00401000(VARIANTARG *param_1)
+
+{
+  VariantClear(param_1);
+  return;
+}
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  FUN_00401010  @  0x00401010
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+void __fastcall FUN_00401010(HMODULE param_1,int *param_2,LPCWSTR param_3)
+
+{
+  HRSRC hResInfo;
+  HGLOBAL hResData;
+  DWORD cElements;
+  SAFEARRAY *pSVar1;
+  _union_2683 local_58;
+  VARIANTARG local_48;
+  int *local_34;
+  int *local_30;
+  int *local_2c;
+  void *local_28;
+  LPVOID local_24;
+  undefined1 *puStack_20;
+  void *local_1c;
+  undefined1 *puStack_18;
+  undefined4 local_14;
+  
+  puStack_20 = &stack0xfffffffc;
+  local_14 = 0xffffffff;
+  puStack_18 = &LAB_0040c175;
+  local_1c = ExceptionList;
+  ExceptionList = &local_1c;
+  local_2c = param_2;
+  hResInfo = FindResourceW(param_1,param_3,L"FILES");
+  hResData = LoadResource(param_1,hResInfo);
+  local_24 = LockResource(hResData);
+  cElements = SizeofResource(param_1,hResInfo);
+  pSVar1 = SafeArrayCreateVector(0x11,0,cElements);
+  SafeArrayAccessData(pSVar1,&local_28);
+  FUN_00403b30(local_28,local_24,cElements);
+  SafeArrayUnaccessData(pSVar1);
+  (**(code **)(*local_2c + 0xb4))(local_2c,pSVar1,&local_30);
+  SafeArrayDestroy(pSVar1);
+  (**(code **)(*local_30 + 0x40))(local_30,&local_34);
+  pSVar1 = SafeArrayCreateVector(0xc,0,0);
+  VariantInit((VARIANTARG *)&local_58.n2);
+  local_14 = 0;
+  VariantInit(&local_48);
+  local_14 = CONCAT31(local_14._1_3_,1);
+  (**(code **)(*local_34 + 0x94))
+            (local_34,local_58._0_4_,local_58.decVal.Hi32,local_58._8_4_,local_58._12_4_,pSVar1,
+             &local_48);
+  VariantClear(&local_48);
+  VariantClear((VARIANTARG *)&local_58.n2);
+  ExceptionList = local_1c;
+  return;
+}
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  FUN_00401140  @  0x00401140
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+void FUN_00401140(void)
+
+{
+  HMODULE pHVar1;
+  FARPROC pFVar2;
+  int *unaff_ESI;
+  int *piStack_1c;
+  int *apiStack_18 [2];
+  int *apiStack_10 [3];
+  
+  pHVar1 = LoadLibraryW(L"kernel32");
+  pFVar2 = GetProcAddress(pHVar1,"SetDefaultDllDirectories");
+  if (pFVar2 != (FARPROC)0x0) {
+    (*pFVar2)(0x800);
+  }
+  pHVar1 = LoadLibraryW(L"mscoree.dll");
+  pFVar2 = GetProcAddress(pHVar1,"CLRCreateInstance");
+  piStack_1c = (int *)0x0;
+  if (pFVar2 != (FARPROC)0x0) {
+    apiStack_18[0] = (int *)0x0;
+    (*pFVar2)(&DAT_00411e3c,&DAT_00411e2c,apiStack_18);
+    if (apiStack_18[0] != (int *)0x0) {
+      (**(code **)(*apiStack_18[0] + 0xc))(apiStack_18[0],L"v4.0.30319",&DAT_00411e4c,apiStack_10);
+      if (apiStack_10[0] != (int *)0x0) {
+        (**(code **)(*apiStack_10[0] + 0x24))
+                  (apiStack_10[0],&DAT_00411e1c,&DAT_00411dfc,&piStack_1c);
+      }
+    }
+    if (piStack_1c != (int *)0x0) goto LAB_00401207;
+  }
+  CorBindToRuntimeEx(0,0,0,&DAT_00411e1c,&DAT_00411dfc,&piStack_1c);
+LAB_00401207:
+  (**(code **)(*piStack_1c + 0x28))(piStack_1c);
+  (**(code **)(*unaff_ESI + 0x34))(unaff_ESI,apiStack_10);
+  (**(code **)*apiStack_18[0])(apiStack_18[0],&DAT_00411e0c,&stack0xffffffe0);
+  FUN_00401010(L"_RESOLVER");
+  FUN_00401010(L"_ENTRYPOINT");
+  return;
+}
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  __security_check_cookie  @  0x0040125E
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/* WARNING: This is an inlined function */
+
+void __fastcall __security_check_cookie(uintptr_t _StackCookie)
+
+{
+  if (_StackCookie == DAT_00414000) {
+    return;
+  }
+  FUN_004014df();
+  return;
+}
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  __scrt_common_main_seh  @  0x00401331
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/* WARNING: Function: __SEH_prolog4 replaced with injection: SEH_prolog4 */
+/* Library Function - Single Match
+    int __cdecl __scrt_common_main_seh(void)
+   
+   Library: Visual Studio 2019 Release */
+
+int __cdecl __scrt_common_main_seh(void)
+
+{
+  code *pcVar1;
+  bool bVar2;
+  char cVar3;
+  undefined1 uVar4;
+  undefined2 uVar5;
+  int iVar6;
+  int *piVar7;
+  undefined4 uVar8;
+  void *local_14;
+  
+  cVar3 = ___scrt_initialize_crt(1);
+  if (cVar3 != '\0') {
+    bVar2 = false;
+    uVar4 = ___scrt_acquire_startup_lock();
+    if (DAT_00414af4 != 1) {
+      if (DAT_00414af4 == 0) {
+        DAT_00414af4 = 1;
+        iVar6 = __initterm_e(&DAT_0040d150,&DAT_0040d168);
+        if (iVar6 != 0) {
+          ExceptionList = local_14;
+          return 0xff;
+        }
+        __initterm(&DAT_0040d144,&DAT_0040d14c);
+        DAT_00414af4 = 2;
+      }
+      else {
+        bVar2 = true;
+      }
+      ___scrt_release_startup_lock(uVar4);
+      piVar7 = (int *)FUN_00401937();
+      if ((*piVar7 != 0) && (cVar3 = ___scrt_is_nonwritable_in_current_image(piVar7), cVar3 != '\0')
+         ) {
+        pcVar1 = (code *)*piVar7;
+        (*(code *)PTR_guard_check_icall_0040d13c)(0,2,0);
+        (*pcVar1)();
+      }
+      piVar7 = (int *)FUN_0040193d();
+      if ((*piVar7 != 0) && (cVar3 = ___scrt_is_nonwritable_in_current_image(piVar7), cVar3 != '\0')
+         ) {
+        __register_thread_local_exe_atexit_callback(*piVar7);
+      }
+      uVar5 = ___scrt_get_show_window_mode();
+      uVar8 = __get_narrow_winmain_command_line();
+      iVar6 = FUN_00401140(0x400000,0,uVar8,uVar5);
+      cVar3 = FUN_00401a94();
+      if (cVar3 != '\0') {
+        if (!bVar2) {
+          __cexit();
+        }
+        ___scrt_uninitialize_crt(1,0);
+        ExceptionList = local_14;
+        return iVar6;
+      }
+                    /* WARNING: Subroutine does not return */
+      _exit(iVar6);
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_00401943(7);
+}
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  entry  @  0x004014AD
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+void entry(void)
+
+{
+  ___security_init_cookie();
+  __scrt_common_main_seh();
+  return;
+}
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  find_pe_section  @  0x004015D9
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/* Library Function - Single Match
+    struct _IMAGE_SECTION_HEADER * __cdecl find_pe_section(unsigned char * const,unsigned int)
+   
+   Libraries: Visual Studio 2017 Release, Visual Studio 2019 Release */
+
+_IMAGE_SECTION_HEADER * __cdecl find_pe_section(uchar *param_1,uint param_2)
+
+{
+  int iVar1;
+  _IMAGE_SECTION_HEADER *p_Var2;
+  _IMAGE_SECTION_HEADER *p_Var3;
+  
+  iVar1 = *(int *)(param_1 + 0x3c);
+  p_Var2 = (_IMAGE_SECTION_HEADER *)
+           (param_1 + (uint)*(ushort *)(param_1 + iVar1 + 0x14) + iVar1 + 0x18);
+  p_Var3 = p_Var2 + *(ushort *)(param_1 + iVar1 + 6);
+  while( true ) {
+    if (p_Var2 == p_Var3) {
+      return (_IMAGE_SECTION_HEADER *)0x0;
+    }
+    if ((p_Var2->VirtualAddress <= param_2) &&
+       (param_2 < (p_Var2->Misc).PhysicalAddress + p_Var2->VirtualAddress)) break;
+    p_Var2 = p_Var2 + 1;
+  }
+  return p_Var2;
+}
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  ___scrt_acquire_startup_lock  @  0x0040161D
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/* Library Function - Single Match
+    ___scrt_acquire_startup_lock
+   
+   Library: Visual Studio 2019 Release */
+
+undefined4 ___scrt_acquire_startup_lock(void)
+
+{
+  int iVar1;
+  int iVar2;
+  
+  iVar2 = ___scrt_is_ucrt_dll_in_use();
+  if (iVar2 != 0) {
+    while( true ) {
+      iVar2 = 0;
+      LOCK();
+      iVar1 = *(int *)((int)Self + 4);
+      if (DAT_00414af8 != 0) {
+        iVar2 = DAT_00414af8;
+        iVar1 = DAT_00414af8;
+      }
+      DAT_00414af8 = iVar1;
+      UNLOCK();
+      if (iVar2 == 0) break;
+      if (*(int *)((int)Self + 4) == iVar2) {
+        return 1;
+      }
+    }
+  }
+  return 0;
+}
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  ___scrt_release_startup_lock  @  0x004017A3
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/* Library Function - Single Match
+    ___scrt_release_startup_lock
+   
+   Library: Visual Studio 2019 Release */
+
+int ___scrt_release_startup_lock(char param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  
+  iVar2 = ___scrt_is_ucrt_dll_in_use();
+  iVar1 = DAT_00414af8;
+  if ((iVar2 != 0) && (param_1 == '\0')) {
+    LOCK();
+    DAT_00414af8 = 0;
+    UNLOCK();
+    iVar2 = iVar1;
+  }
+  return iVar2;
+}
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  try_load_library_from_system_directory  @  0x00403872
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/* Library Function - Single Match
+    struct HINSTANCE__ * __cdecl try_load_library_from_system_directory(wchar_t const * const)
+   
+   Library: Visual Studio 2019 Release */
+
+HINSTANCE__ * __cdecl try_load_library_from_system_directory(wchar_t *param_1)
+
+{
+  HINSTANCE__ *pHVar1;
+  DWORD DVar2;
+  int iVar3;
+  HMODULE pHVar4;
+  
+  pHVar1 = LoadLibraryExW(param_1,(HANDLE)0x0,0x800);
+  if (pHVar1 == (HMODULE)0x0) {
+    DVar2 = GetLastError();
+    if (DVar2 == 0x57) {
+      iVar3 = _wcsncmp(param_1,L"api-ms-",7);
+      if (iVar3 != 0) {
+        pHVar4 = LoadLibraryExW(param_1,(HANDLE)0x0,0);
+        return pHVar4;
+      }
+    }
+    pHVar1 = (HINSTANCE__ *)0x0;
+  }
+  return pHVar1;
+}
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  __get_narrow_winmain_command_line  @  0x00404857
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/* Library Function - Single Match
+    __get_narrow_winmain_command_line
+   
+   Library: Visual Studio 2015 Release */
+
+char * __get_narrow_winmain_command_line(void)
+
+{
+  char cVar1;
+  bool bVar2;
+  int iVar3;
+  char *pcVar4;
+  
+  ___acrt_initialize_multibyte();
+  pcVar4 = DAT_00414d6c;
+  if (DAT_00414d6c == (char *)0x0) {
+    pcVar4 = &DAT_00414d08;
+  }
+  bVar2 = false;
+  do {
+    cVar1 = *pcVar4;
+    if (cVar1 < '!') {
+      if (cVar1 == '\0') {
+        return pcVar4;
+      }
+      if (!bVar2) {
+        for (; (*pcVar4 != '\0' && (*pcVar4 < '!')); pcVar4 = pcVar4 + 1) {
+        }
+        return pcVar4;
+      }
+    }
+    if (cVar1 == '\"') {
+      bVar2 = !bVar2;
+    }
+    iVar3 = __ismbblead((int)cVar1);
+    if (iVar3 != 0) {
+      pcVar4 = pcVar4 + 1;
+    }
+    pcVar4 = pcVar4 + 1;
+  } while( true );
+}
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  find_end_of_double_null_terminated_sequence  @  0x004069E7
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/* Library Function - Single Match
+    wchar_t const * __cdecl find_end_of_double_null_terminated_sequence(wchar_t const * const)
+   
+   Library: Visual Studio 2015 Release */
+
+wchar_t * __cdecl find_end_of_double_null_terminated_sequence(wchar_t *param_1)
+
+{
+  wchar_t wVar1;
+  wchar_t *pwVar2;
+  
+  wVar1 = *param_1;
+  while (wVar1 != L'\0') {
+    pwVar2 = param_1;
+    do {
+      wVar1 = *pwVar2;
+      pwVar2 = pwVar2 + 1;
+    } while (wVar1 != L'\0');
+    param_1 = param_1 + ((int)pwVar2 - (int)(param_1 + 1) >> 1) + 1;
+    wVar1 = *param_1;
+  }
+  return param_1 + 1;
+}
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  __clrfp  @  0x00409509
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/* Library Function - Single Match
+    __clrfp
+   
+   Library: Visual Studio 2015 Release */
+
+int __clrfp(void)
+
+{
+  short in_FPUStatusWord;
+  
+  return (int)in_FPUStatusWord;
+}
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  __startOneArgErrorHandling  @  0x0040AD97
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/* Library Function - Single Match
+    __startOneArgErrorHandling
+   
+   Library: Visual Studio 2015 Release */
+
+float10 __fastcall
+__startOneArgErrorHandling
+          (undefined4 param_1,undefined4 param_2,undefined2 param_3,undefined4 param_4,
+          undefined4 param_5,undefined4 param_6)
+
+{
+  float10 in_ST0;
+  undefined1 local_24 [8];
+  undefined4 local_1c;
+  undefined4 local_18;
+  double local_c;
+  
+  local_c = (double)in_ST0;
+  local_1c = param_5;
+  local_18 = param_6;
+  __87except(param_2,local_24,&param_3);
+  return (float10)local_c;
+}
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  __FindPESection  @  0x0040BE70
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+/* Library Function - Single Match
+    __FindPESection
+   
+   Libraries: Visual Studio 2015 Release, Visual Studio 2017 Release, Visual Studio 2019 Release */
+
+PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
+
+{
+  int iVar1;
+  PIMAGE_SECTION_HEADER p_Var2;
+  uint uVar3;
+  
+  uVar3 = 0;
+  iVar1 = *(int *)(pImageBase + 0x3c);
+  p_Var2 = (PIMAGE_SECTION_HEADER)
+           (pImageBase + *(ushort *)(pImageBase + iVar1 + 0x14) + 0x18 + iVar1);
+  if (*(ushort *)(pImageBase + iVar1 + 6) != 0) {
+    do {
+      if ((p_Var2->VirtualAddress <= rva) &&
+         (rva < (p_Var2->Misc).PhysicalAddress + p_Var2->VirtualAddress)) {
+        return p_Var2;
+      }
+      uVar3 = uVar3 + 1;
+      p_Var2 = p_Var2 + 1;
+    } while (uVar3 < *(ushort *)(pImageBase + iVar1 + 6));
+  }
+  return (PIMAGE_SECTION_HEADER)0x0;
+}
+
+
+
+[IMPORTS]
+  MSCOREE.DLL                   CorBindToRuntimeEx
+  KERNEL32.DLL                  GetModuleFileNameA
+  KERNEL32.DLL                  DecodePointer
+  KERNEL32.DLL                  SizeofResource
+  KERNEL32.DLL                  LockResource
+  KERNEL32.DLL                  LoadLibraryW
+  KERNEL32.DLL                  LoadResource
+  KERNEL32.DLL                  FindResourceW
+  KERNEL32.DLL                  GetProcAddress
+  KERNEL32.DLL                  WriteConsoleW
+  KERNEL32.DLL                  SetFilePointerEx
+  KERNEL32.DLL                  GetConsoleMode
+  KERNEL32.DLL                  GetConsoleCP
+  KERNEL32.DLL                  FlushFileBuffers
+  KERNEL32.DLL                  HeapReAlloc
+  KERNEL32.DLL                  HeapSize
+  KERNEL32.DLL                  UnhandledExceptionFilter
+  KERNEL32.DLL                  SetUnhandledExceptionFilter
+  KERNEL32.DLL                  GetCurrentProcess
+  KERNEL32.DLL                  TerminateProcess
+  KERNEL32.DLL                  IsProcessorFeaturePresent
+  KERNEL32.DLL                  QueryPerformanceCounter
+  KERNEL32.DLL                  GetCurrentProcessId
+  KERNEL32.DLL                  GetCurrentThreadId
+  KERNEL32.DLL                  GetSystemTimeAsFileTime
+  KERNEL32.DLL                  InitializeSListHead
+  KERNEL32.DLL                  IsDebuggerPresent
+  KERNEL32.DLL                  GetStartupInfoW
+  KERNEL32.DLL                  GetModuleHandleW
+  KERNEL32.DLL                  RtlUnwind
+  KERNEL32.DLL                  GetLastError
+  KERNEL32.DLL                  SetLastError
+  KERNEL32.DLL                  EncodePointer
+  KERNEL32.DLL                  EnterCriticalSection
+  KERNEL32.DLL                  LeaveCriticalSection
+  KERNEL32.DLL                  DeleteCriticalSection
+  KERNEL32.DLL                  InitializeCriticalSectionAndSpinCount
+  KERNEL32.DLL                  TlsAlloc
+  KERNEL32.DLL                  TlsGetValue
+  KERNEL32.DLL                  TlsSetValue
+  KERNEL32.DLL                  TlsFree
+  KERNEL32.DLL                  FreeLibrary
+  KERNEL32.DLL                  LoadLibraryExW
+  KERNEL32.DLL                  RaiseException
+  KERNEL32.DLL                  GetStdHandle
+  KERNEL32.DLL                  WriteFile
+  KERNEL32.DLL                  CreateFileW
+  KERNEL32.DLL                  MultiByteToWideChar
+  KERNEL32.DLL                  WideCharToMultiByte
+  KERNEL32.DLL                  ExitProcess
+  KERNEL32.DLL                  GetModuleHandleExW
+  KERNEL32.DLL                  GetACP
+  KERNEL32.DLL                  CloseHandle
+  KERNEL32.DLL                  HeapAlloc
+  KERNEL32.DLL                  HeapFree
+  KERNEL32.DLL                  FindClose
+  KERNEL32.DLL                  FindFirstFileExA
+  KERNEL32.DLL                  FindNextFileA
+  KERNEL32.DLL                  IsValidCodePage
+  KERNEL32.DLL                  GetOEMCP
+  KERNEL32.DLL                  GetCPInfo
+  KERNEL32.DLL                  GetCommandLineA
+  KERNEL32.DLL                  GetCommandLineW
+  KERNEL32.DLL                  GetEnvironmentStringsW
+  KERNEL32.DLL                  FreeEnvironmentStringsW
+  KERNEL32.DLL                  LCMapStringW
+  KERNEL32.DLL                  SetStdHandle
+  KERNEL32.DLL                  GetFileType
+  KERNEL32.DLL                  GetStringTypeW
+  KERNEL32.DLL                  GetProcessHeap
+  OLEAUT32.DLL                  VariantInit
+  OLEAUT32.DLL                  SafeArrayUnaccessData
+  OLEAUT32.DLL                  SafeArrayCreateVector
+  OLEAUT32.DLL                  SafeArrayDestroy
+  OLEAUT32.DLL                  VariantClear
+  OLEAUT32.DLL                  SafeArrayAccessData

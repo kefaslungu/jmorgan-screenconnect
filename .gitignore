@@ -1,0 +1,20 @@
+# Do NOT commit the malware sample or extracted binaries
+ScreenConnect.ClientSetup.exe
+*.msi
+*.bin
+*.exe
+
+# Extracted artifacts (binary blobs — too large and unnecessary)
+extracted_resources/
+
+# Ghidra project files (large, binary, environment-specific)
+ghidra_project/
+
+# Screenshots (may contain personal info)
+screenshots/
+
+# Lure HTML file (may contain personal info if viewed locally)
+# Exclusive Invitation.html
+
+# Claude Code project settings
+.claude/
